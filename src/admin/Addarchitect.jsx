@@ -1,18 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchArchitect } from "../redux/slice/CreateContentSlice";
 import { AdminContext } from "../contexts/Admincontext";
 import { updateArchitect } from "../redux/slice/UpdateArchitectSlice";
 
 function Addarchitect({ setIsOpen }) {
   const archId = useParams();
-  console.log(archId);
+
+  const navigate = useNavigate();
+
   const archData = useSelector((state) => state.architectdata.data);
-  console.log(archData);
+
   const item = archData && archData.find((data) => data._id == archId.id);
-  console.log(item);
 
   const { adminBtn } = useContext(AdminContext);
 
@@ -42,11 +43,11 @@ function Addarchitect({ setIsOpen }) {
       const resultAction = await dispatch(fetchArchitect(architectDetails));
       if (fetchArchitect.rejected.match(resultAction)) {
         console.error("Architect creation/update failed");
-        alert("Failed to create/update architect. Please check the data.");
+        alert("Email already exist / Invalid mail.");
       } else {
-        console.log("Architect added/updated successfully");
         alert("Architect added/updated successfully");
-        window.location.reload();
+        setIsOpen(!setIsOpen);
+        navigate("/admin");
       }
     } catch (error) {
       console.error("Error adding/updating architect:", error);
@@ -62,7 +63,7 @@ function Addarchitect({ setIsOpen }) {
         alert("Failed to update architect. Please check the data.");
       } else {
         alert("Architect added/updated successfully");
-        window.location.reload();
+        navigate("/admin/architects");
       }
     } catch (error) {
       console.error("Error updating architect:", error);

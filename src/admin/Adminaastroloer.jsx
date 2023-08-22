@@ -32,7 +32,6 @@ function Adminaastroloer() {
   const [isOpen, setIsOpen] = useState(false);
 
   const astrologerData = useSelector((state) => state.astrologerdata.data);
-  console.log(astrologerData);
 
   const dispatch = useDispatch();
 

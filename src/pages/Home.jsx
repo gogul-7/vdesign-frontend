@@ -20,7 +20,7 @@ function Home() {
     handleHomeNav();
   });
 
-  const handleEnquiry = async (e) => {
+  const handleEnquiry = async () => {
     dispatch(enquiryPost(enqDetails));
     try {
       const resultAction = await dispatch(enquiryPost(enqDetails));

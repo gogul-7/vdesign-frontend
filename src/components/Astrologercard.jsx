@@ -16,10 +16,8 @@ function Astrologercard({ item, setIsOpen }) {
 
   const handleUserDelete = () => {
     const id = item._id;
-    console.log(id);
     dispatch(deleteAstrolger(id));
     alert("Astrologer deleted Successfully.");
-    window.location.reload();
   };
 
   const handleUserEdit = () => {

@@ -4,12 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchAstrologer } from "../redux/slice/CreateAstrologerSlice";
 import { AdminContext } from "../contexts/Admincontext";
 import { updateAstrologer } from "../redux/slice/UpdateAstrologerSlice";
+import { useNavigate } from "react-router-dom";
 
 function Addastrologer({ setIsOpen }) {
   const { uploadBtn, astrId } = useContext(AdminContext);
 
+  const navigate = useNavigate();
+
   const item = useSelector((state) => state.astrologerdata.data);
-  // console.log(item);
 
   const astrData = item && item.find((data) => data._id === astrId);
 
@@ -35,19 +37,16 @@ function Addastrologer({ setIsOpen }) {
     }
   }, [uploadBtn, astrData]);
 
-  //   const astrData = useSelector((state) => state.fetchAstrologer);
-
-  console.log(astrId);
-
   const handleAstrologer = async () => {
     const astrologerDetails = { ...details, file: file };
     try {
       const resultAction = await dispatch(fetchAstrologer(astrologerDetails));
       if (fetchAstrologer.rejected.match(resultAction)) {
-        alert("Failed to create astrologer. Please check the data.");
+        alert("Email already exist. / Invalid mail.");
       } else {
         alert("Astrologer added/updated successfully");
-        window.location.reload();
+        setIsOpen(!setIsOpen);
+        navigate("/admin");
       }
     } catch (error) {
       console.error("Error adding/updating astrologer:", error);
@@ -62,7 +61,7 @@ function Addastrologer({ setIsOpen }) {
         alert("Failed to update Astrologer. Please check the data.");
       } else {
         alert("Astrologer updated successfully");
-        window.location.reload();
+        navigate("/admin");
       }
     } catch (error) {
       console.error("Error adding/updating Astrologer:", error);

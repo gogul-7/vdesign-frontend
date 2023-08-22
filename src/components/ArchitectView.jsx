@@ -83,7 +83,7 @@ function ArchitectView() {
         setIsLoading(false);
       } else {
         alert("Image Uploaded Successfully.");
-        window.location.reload();
+        navigate("/admin/architect");
       }
     } catch (error) {
       console.error("Error adding/updating images:", error);

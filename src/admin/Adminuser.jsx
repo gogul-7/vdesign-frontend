@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { fetchUserData } from "../redux/slice/UserDataSlice";
 import { deleteUser } from "../redux/slice/DeleteUserSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Adminuser() {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchUserData());
@@ -13,13 +15,11 @@ function Adminuser() {
 
   const userData = useSelector((state) => state.usersData.data);
 
-  // console.log(userData);
-
   const handleDeleteUser = (id) => {
     const userConfirmed = window.confirm("Are you sure?");
     if (userConfirmed) {
       dispatch(deleteUser(id));
-      window.location.reload();
+      navigate("/admin");
     }
   };
 

@@ -14,7 +14,7 @@ function Login() {
 
   const handleLogin = async () => {
     if (credentials.email === "admin") navigate("/adminlogin");
-    else{
+    else {
       try {
         const resultAction = await dispatch(fetchLogin(credentials));
         if (fetchLogin.rejected.match(resultAction)) {
@@ -22,8 +22,8 @@ function Login() {
         } else {
           localStorage.setItem("userEmail", credentials.email);
           alert("Login Succesfull");
-          navigate("/");
           localStorage.setItem("authToken", userData.authToken);
+          navigate("/");
         }
       } catch (error) {
         console.error("Enter Valid Credentials", error);
