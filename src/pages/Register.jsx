@@ -20,7 +20,6 @@ function Register() {
   };
 
   const data = useSelector((state) => state.createuser.data);
-  console.log(details);
 
   const handleRegister = async () => {
     try {

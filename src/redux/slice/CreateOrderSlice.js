@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const createOrder = createAsyncThunk(
   "createorder",
   async (details, isRejectedWithValue) => {
-    const url = "http://localhost:8080/api/createorderid";
+    const url = "https://v-design.onrender.com/api/createorderid";
     const options = {
       method: "POST",
       headers: {

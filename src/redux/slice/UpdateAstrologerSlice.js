@@ -5,7 +5,7 @@ const updateAstrologer = createAsyncThunk(
   async (astrologerDetails, isRejectedWithValue) => {
     const id = astrologerDetails.id;
     console.log(id);
-    const url = `http://localhost:8080/api/updateastrologer/${id}`;
+    const url = `https://v-design.onrender.com/api/updateastrologer/${id}`;
     const formData = new FormData();
     formData.append("files", astrologerDetails.file);
     formData.append("name", astrologerDetails.name);

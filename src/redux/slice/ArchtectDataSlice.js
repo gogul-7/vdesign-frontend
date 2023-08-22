@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = "http://localhost:8080/api/getarchitects";
+const url = "https://v-design.onrender.com/api/getarchitects";
 
 const options = {
   method: "GET",

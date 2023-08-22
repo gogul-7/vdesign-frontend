@@ -9,7 +9,7 @@ const updateArchitect = createAsyncThunk(
   async (architectDetails, isRejectedWithValue) => {
     const id = architectDetails.id;
     console.log(id);
-    const url = `http://localhost:8080/api/updatearchitect/${id}`;
+    const url = `https://v-design.onrender.com/api/updatearchitect/${id}`;
     const formData = new FormData();
     formData.append("files", architectDetails.file);
     formData.append("name", architectDetails.name);

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const url = "http://localhost:8080/api/createuser";
+const url = "https://v-design.onrender.com/api/createuser";
 
 export const fetchCreateUser = createAsyncThunk(
   "fetchcreateuser",

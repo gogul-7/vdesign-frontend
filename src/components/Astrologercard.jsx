@@ -63,7 +63,7 @@ function Astrologercard({ item, setIsOpen }) {
       image:
         "https://media.istockphoto.com/id/849525242/vector/letter-v-logo-blue-vector-icon-ribbon-styled-font.jpg?s=170667a&w=0&k=20&c=9pC89LYAye1rU8_GP8GmJkQ98q0YnfqKjQbaaeZylcA=",
       order_id: order.id,
-      callback_url: "http://localhost:8080/api/paymentverification",
+      callback_url: "https://v-design.onrender.com/api/paymentverification",
       prefill: {
         name: item.name,
         email: item.email,

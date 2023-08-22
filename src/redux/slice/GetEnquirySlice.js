@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = "http://localhost:8080/api/getenquiry";
+const url = "https://v-design.onrender.com/api/getenquiry";
 
 const options = {
   method: "GET",

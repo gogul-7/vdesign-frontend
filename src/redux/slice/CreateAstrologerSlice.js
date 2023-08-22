@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = "http://localhost:8080/api/createastrologer";
+const url = "https://v-design.onrender.com/api/createastrologer";
 
 export const fetchAstrologer = createAsyncThunk(
   "fetchastrologer",

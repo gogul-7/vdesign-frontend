@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = "http://localhost:8080/api/getuploadedimages";
+const url = "https://v-design.onrender.com/api/getuploadedimages";
 
 export const fetchUploadedImagesData = createAsyncThunk(
   "fetchUploadedImagesData",

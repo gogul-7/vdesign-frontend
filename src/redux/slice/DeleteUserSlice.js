@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const deleteUser = createAsyncThunk("deleteUser", async (id) => {
-  const url = `http://localhost:8080/api/deleteuser/${id}`;
+  const url = `https://v-design.onrender.com/api/deleteuser/${id}`;
   const options = {
     method: "DELETE",
   };

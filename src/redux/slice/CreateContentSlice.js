@@ -4,7 +4,7 @@ import {
   isRejectedWithValue,
 } from "@reduxjs/toolkit";
 
-const url = "http://localhost:8080/api/createarchitect";
+const url = "https://v-design.onrender.com/api/createarchitect";
 
 export const fetchArchitect = createAsyncThunk(
   "fetcharchitect",

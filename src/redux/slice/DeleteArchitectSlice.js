@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const deleteAcrhitect = createAsyncThunk(
   "deleteArhictect",
   async (id) => {
-    const url = `http://localhost:8080/api/deletearchitect/${id}`;
+    const url = `https://v-design.onrender.com/api/deletearchitect/${id}`;
     const options = {
       method: "DELETE",
     };

@@ -28,7 +28,6 @@ function Architectcard({ item }) {
         name: item.name,
         category: category,
       };
-      console.log(details);
       dispatch(createOrder(details));
     } else {
       alert("Please Login to Book");
@@ -51,7 +50,8 @@ function Architectcard({ item }) {
       description: "Booking Payment",
       image:
         "https://media.istockphoto.com/id/849525242/vector/letter-v-logo-blue-vector-icon-ribbon-styled-font.jpg?s=170667a&w=0&k=20&c=9pC89LYAye1rU8_GP8GmJkQ98q0YnfqKjQbaaeZylcA=",
-      callback_url: "http://localhost:8080/api/paymentverification",
+      order_id: order.id,
+      callback_url: "https://v-design.onrender.com/api/paymentverification",
       prefill: {
         name: item.name,
         email: item.email,

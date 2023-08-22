@@ -15,13 +15,13 @@ function Login() {
   const handleLogin = async () => {
     try {
       const resultAction = await dispatch(fetchLogin(credentials));
-      localStorage.setItem("userEmail", credentials.email);
       if (fetchLogin.rejected.match(resultAction)) {
         alert("Enter Valid Credentials");
       } else {
+        localStorage.setItem("userEmail", credentials.email);
         alert("Login Succesfull");
-        localStorage.setItem("authToken", userData.authToken);
         navigate("/");
+        localStorage.setItem("authToken", userData.authToken);
       }
     } catch (error) {
       console.error("Enter Valid Credentials", error);
