@@ -13,18 +13,21 @@ function Login() {
   const dispatch = useDispatch();
 
   const handleLogin = async () => {
-    try {
-      const resultAction = await dispatch(fetchLogin(credentials));
-      if (fetchLogin.rejected.match(resultAction)) {
-        alert("Enter Valid Credentials");
-      } else {
-        localStorage.setItem("userEmail", credentials.email);
-        alert("Login Succesfull");
-        navigate("/");
-        localStorage.setItem("authToken", userData.authToken);
+    if (credentials.email === "admin") navigate("/adminlogin");
+    else{
+      try {
+        const resultAction = await dispatch(fetchLogin(credentials));
+        if (fetchLogin.rejected.match(resultAction)) {
+          alert("Enter Valid Credentials");
+        } else {
+          localStorage.setItem("userEmail", credentials.email);
+          alert("Login Succesfull");
+          navigate("/");
+          localStorage.setItem("authToken", userData.authToken);
+        }
+      } catch (error) {
+        console.error("Enter Valid Credentials", error);
       }
-    } catch (error) {
-      console.error("Enter Valid Credentials", error);
     }
   };
 

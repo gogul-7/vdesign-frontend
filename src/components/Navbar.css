@@ -30,7 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 150px;
+  top: 165px;
   height: 356px;
   right: 0;
   position: relative;
@@ -71,6 +71,11 @@
   width: auto;
   display: flex;
   gap: 20px;
+}
+.toggled-auth-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 .nav-login-btn {
   border: 0;

@@ -31,7 +31,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      window.innerWidth < 860 ? setNav(true) : setNav(false);
+      window.innerWidth < 1230 ? setNav(true) : setNav(false);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -88,6 +88,31 @@ function Navbar() {
             <Link to={"/"} className="navItems navitems2">
               <p onClick={() => scrollToAbout(2000)}>Contact us</p>
             </Link>
+            {localStorage.getItem("authToken") ? (
+              <div className="toggled-auth-section">
+                <Link to="mypayments" style={{ textDecoration: "none" }}>
+                  <button className="nav-login-btn button4">My Payments</button>
+                </Link>
+                <button className="nav-login-btn" onClick={handleLogout}>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="toggled-auth-section">
+                <button
+                  className="nav-login-btn"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
+                <button
+                  className="nav-login-btn"
+                  onClick={() => navigate("/register")}
+                >
+                  SignUp
+                </button>
+              </div>
+            )}
           </motion.div>
         </div>
       ) : (
