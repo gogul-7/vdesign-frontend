@@ -1,0 +1,10 @@
+.box {
+  width: 30px;
+  height: 30px;
+  background: #19a7ce;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,34 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  gap: 50px;
+}
+.architect-payment {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 70%;
+  padding: 10px;
+}
+.astrologer-payment {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.payment-sub-container {
+  border: 1px solid black;
+  background-color: antiquewhite;
+  max-width: 350px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 250px;
+}

@@ -1,0 +1,109 @@
+.arch-view-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.arch-view-desc-part {
+  width: 50%;
+  height: auto;
+  border: 1px solid black;
+  padding: 41px;
+  display: flex;
+  align-items: center;
+  border-right: 0;
+  border-left: 0;
+}
+.arch-view-desc-img {
+  max-width: 200px;
+}
+.arch-view-work-part {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.custom-file-input {
+  color: transparent;
+}
+.input1::before {
+  content: "Add more Images";
+  width: 130px;
+}
+.input2::before {
+  content: "Add Images";
+  width: 80px;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.work-image-form {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.custom-file-input::before {
+  color: black;
+  display: flex;
+  justify-content: center;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.custom-file-button {
+  position: relative;
+  left: -60px;
+  width: 50px;
+  height: 30px;
+  border: 0;
+  background-color: rgb(18, 135, 18);
+  color: white;
+  transition: 0.3s;
+}
+.custom-file-button:hover {
+  background: none;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.arch-view-work-part {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+.workImage-part {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+.arch-view-work-image {
+  width: 500px;
+  transition: 0.3s;
+}
+.arch-view-work-image:hover {
+  transform: scale(1.5);
+}
